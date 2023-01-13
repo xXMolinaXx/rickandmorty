@@ -8,6 +8,31 @@
   display: flex;
   justify-content: center;
 }
+.search-input{
+  width: 60%;
+  height: 80px;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: larger;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.card{
+  background-color: white;
+  height: 400px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.mini-card{
+  background-color: white;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .image-size {
   width: 60%;
 }
@@ -18,7 +43,7 @@
   text-align: center;
 }
 .bg-pokemon {
-  background-image: url(../assets/img/pokemon1-84ac74e67766dd761216336353211309-640-0.jpg.crdownload);
+  background-image: url(../assets/img/cover-pokemon-preview.png);
 }
 footer {
   background-color: #ffcc01;

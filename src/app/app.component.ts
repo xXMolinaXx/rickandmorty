@@ -11,6 +11,9 @@ export class AppComponent {
   age = 50;
   showPracticeBlock = false;
   names = ['kenny', 'jared', 'molina', 'murillo'];
+
+  showClass = true;
+  imageSize = 10
   enable() {
     this.disabled = !this.disabled;
   }
@@ -27,5 +30,8 @@ export class AppComponent {
   }
   showPractice() {
     this.showPracticeBlock = !this.showPracticeBlock;
+  }
+  deleteaddclass() {
+    this.showClass = !this.showClass;
   }
 }

@@ -32,20 +32,50 @@
     <p *ngSwitchCase="'kenny'">kenny</p>
     <p *ngSwitchCase="'kenny 1'">kenny1</p>
   </div>
+  <!-- conditinonal class -->
+  <input type="button" (click)="deleteaddclass()" value="quitar/agregar">
+  <div [class.box]="showClass" (scroll)="onscroll($event)">
+    <p>{{'kenny jared molina murillo'.repeat(100)}}</p>
+  </div>
+  <input type="text" [(ngModel)]="imageSize" name="" id="">
+  <img [style.width.px]="imageSize" class="image-size" src="../assets/img/International_Pokémon_logo.svg.png">
+  <!-- ng class ng style sirve mejor que lo anterior -->
 </div>
 <div class="bg-pokemon">
   <section class="center p-10">
     <img class="image-size" src="../assets/img/International_Pokémon_logo.svg.png">
   </section>
-<main>
-  asd
-</main>
+  <main class="p-10" style="min-height: 90vh;">
+    <div class="center">
+      <input type="text" class="search-input" placeholder="Ingrese el nombre de un pokemon o un numero..."
+        title="escribe el nombre de un pokemon, o tambien un numero entero 1  en adelante y prueba cual te sale">
+    </div>
+    <br>
+    <div>
+      <div class="mini-card">
+
+      </div>
+    </div>
+    <div class="center">
+
+      <div class="card">
+        <img src="" alt="">
+      </div>
+      <div class="card">
+
+      </div>
+      <div class="card">
+
+      </div>
+    </div>
+  </main>
   <footer class="">
     <div>
       <button (click)="showPractice()">mostrar/ocultar</button>
     </div>
     <div>
       <p class="text-center">frontend pokemon, by KenJ</p>
+      <p class="text-center">proyecto en angular</p>
     </div>
   </footer>
 </div>
