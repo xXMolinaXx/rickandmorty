@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'my-app';
   disabled = true;
   age = 50;
+  showPracticeBlock = false;
   names = ['kenny', 'jared', 'molina', 'murillo'];
   enable() {
     this.disabled = !this.disabled;
@@ -23,5 +24,8 @@ export class AppComponent {
   changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.title = element.value;
+  }
+  showPractice() {
+    this.showPracticeBlock = !this.showPracticeBlock;
   }
 }

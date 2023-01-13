@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.image-size {
+  width: 60%;
+}
+.p-10 {
+  padding: 10px;
+}
+.text-center {
+  text-align: center;
+}
+.bg-pokemon {
+  background-image: url(../assets/img/pokemon1-84ac74e67766dd761216336353211309-640-0.jpg.crdownload);
+}
+footer {
+  background-color: #ffcc01;
+  margin: 0px 50px 0px 50px;
+  padding: 10px;
+  border: 5px #385ca8 solid;
+  border-bottom: 0px;
+}
