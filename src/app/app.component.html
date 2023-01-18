@@ -42,8 +42,8 @@
   <!-- ng class ng style sirve mejor que lo anterior -->
   <app-img [stringPasadoPorPafre]="title" (valor2)="onloaded($event)"></app-img>
 </div>
-<div class="bg-rickMorty" >
-  <section class="center p-10 " >
+<div class="bg-rickMorty">
+  <section class="center p-10 ">
     <img class="image-size" src="../assets/img/191041327281-rm4_Hero_000000-767x206.png">
   </section>
   <main class="p-10" style="min-height: 90vh;">
@@ -54,20 +54,13 @@
     </div>
     <br>
     <div>
-      <div class="mini-card" >
+      <div class="mini-card">
 
       </div>
     </div>
     <div class="center">
-
-      <div class="card" *ngFor="let element of characters ">
-        <img [src]="element.image" alt="" (error)="imgError()" (load)="imgLoaded()"> <!-- evento cuando se carga y hay error al cargar una imagen-->
-        <p>{{element.name}}</p>
-        <p>{{element.gender}}</p>
-        <p>{{element.origin.name}}</p>
-      </div>
-
-
+      <app-card *ngFor="let element of characters " [image]="element.image" [name]="element.name"
+        [gender]="element.gender" [origin]="element.origin.name" />
     </div>
   </main>
   <footer class="">
