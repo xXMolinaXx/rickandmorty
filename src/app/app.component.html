@@ -40,33 +40,34 @@
   <input type="text" [(ngModel)]="imageSize" name="" id="">
   <img [style.width.px]="imageSize" class="image-size" src="../assets/img/International_Pokémon_logo.svg.png">
   <!-- ng class ng style sirve mejor que lo anterior -->
+  <app-img [stringPasadoPorPafre]="title" (valor2)="onloaded($event)"></app-img>
 </div>
-<div class="bg-pokemon">
-  <section class="center p-10">
-    <img class="image-size" src="../assets/img/International_Pokémon_logo.svg.png">
+<div class="bg-rickMorty" >
+  <section class="center p-10 " >
+    <img class="image-size" src="../assets/img/191041327281-rm4_Hero_000000-767x206.png">
   </section>
   <main class="p-10" style="min-height: 90vh;">
     <div class="center">
-      <input type="text" class="search-input" placeholder="Ingrese el nombre de un pokemon o un numero..."
-        title="escribe el nombre de un pokemon, o tambien un numero entero 1  en adelante y prueba cual te sale">
+      <input (keydown)="search()" [(ngModel)]="valueSearch" type="text" class="search-input"
+        placeholder="Ingrese el nombre de un personaje..."
+        title="escribe el nombre de un persona, o tambien un numero entero 1  en adelante y prueba cual te sale">
     </div>
     <br>
     <div>
-      <div class="mini-card">
+      <div class="mini-card" >
 
       </div>
     </div>
     <div class="center">
 
-      <div class="card">
-        <img src="" alt="">
+      <div class="card" *ngFor="let element of characters ">
+        <img [src]="element.image" alt="" (error)="imgError()" (load)="imgLoaded()"> <!-- evento cuando se carga y hay error al cargar una imagen-->
+        <p>{{element.name}}</p>
+        <p>{{element.gender}}</p>
+        <p>{{element.origin.name}}</p>
       </div>
-      <div class="card">
 
-      </div>
-      <div class="card">
 
-      </div>
     </div>
   </main>
   <footer class="">
@@ -74,7 +75,7 @@
       <button (click)="showPractice()">mostrar/ocultar</button>
     </div>
     <div>
-      <p class="text-center">frontend pokemon, by KenJ</p>
+      <p class="text-center">frontend rick and morty, by KenJ</p>
       <p class="text-center">proyecto en angular</p>
     </div>
   </footer>

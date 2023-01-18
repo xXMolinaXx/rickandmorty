@@ -1,0 +1,5 @@
+<p>img works!</p>
+<p>{{stringPasadoPorPafre}}</p>
+<input type="text"  [(ngModel)]="valor">
+<img [src]="valor" alt="" (error)="imgError()" (load)="imgLoaded()">
+<p>{{valor}}</p>

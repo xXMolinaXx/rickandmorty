@@ -7,8 +7,9 @@
 .center {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
-.search-input{
+.search-input {
   width: 60%;
   height: 80px;
   border-radius: 20px;
@@ -16,7 +17,7 @@
   font-size: larger;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.card{
+.card {
   background-color: white;
   height: 400px;
   width: 300px;
@@ -24,7 +25,11 @@
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.mini-card{
+.card img {
+  border-radius: 20px 20px 0px 0px;
+  border-color: black;
+}
+.mini-card {
   background-color: white;
   height: 100px;
   width: 300px;
@@ -42,13 +47,13 @@
 .text-center {
   text-align: center;
 }
-.bg-pokemon {
-  background-image: url(../assets/img/cover-pokemon-preview.png);
+.bg-rickMorty {
+  background-image: url(../assets/img/Rick-and-Morty-Zoom-Backgrounds-Garage-1.webp);
 }
 footer {
-  background-color: #ffcc01;
+  background-color: #69ad53;
   margin: 0px 50px 0px 50px;
   padding: 10px;
-  border: 5px #385ca8 solid;
+  border: 5px #c7fa6c solid;
   border-bottom: 0px;
 }

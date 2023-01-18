@@ -11,9 +11,10 @@ export class AppComponent {
   age = 50;
   showPracticeBlock = false;
   names = ['kenny', 'jared', 'molina', 'murillo'];
-
+  characters: any[] = [];
   showClass = true;
-  imageSize = 10
+  imageSize = 10;
+  valueSearch = '';
   enable() {
     this.disabled = !this.disabled;
   }
@@ -33,5 +34,20 @@ export class AppComponent {
   }
   deleteaddclass() {
     this.showClass = !this.showClass;
+  }
+  imgLoaded() {
+    console.log('img cargado correctamente');
+  }
+  imgError() {
+    console.log('error al cargar imagen');
+  }
+  onloaded(value: string) {
+    console.log('evento del padre', value);
+  }
+  search() {
+    fetch(`https://rickandmortyapi.com/api/character/?name=${this.valueSearch}`)
+      .then((response) => response.json())
+      .then((data) => (this.characters = data.results))
+      .catch((data) => console.log(data));
   }
 }
