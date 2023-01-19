@@ -15,8 +15,23 @@ export class AppComponent {
   showClass = true;
   imageSize = 10;
   valueSearch = '';
+  suggestion: any[] = [];
+  showNoContent = false;
+  loading = false;
   enable() {
     this.disabled = !this.disabled;
+  }
+  loadSuggestion() {
+    fetch(`https://rickandmortyapi.com/api/character/1,2,3,4,5`)
+      .then((response) => response.json())
+      .then((data) => {
+        this.suggestion = data;
+      })
+      .catch((data) => console.log(data));
+  }
+  ngOnInit() {
+    this.showNoContent = true;
+    this.loadSuggestion();
   }
   add() {
     this.age = this.age + 1;
@@ -45,9 +60,35 @@ export class AppComponent {
     console.log('evento del padre', value);
   }
   search() {
+    this.loading = true;
     fetch(`https://rickandmortyapi.com/api/character/?name=${this.valueSearch}`)
-      .then((response) => response.json())
-      .then((data) => (this.characters = data.results))
-      .catch((data) => console.log(data));
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Something went wrong');
+      })
+      .then((data) => {
+        this.loading = false;
+        if (data.length === 0) {
+          this.showNoContent = true;
+        } else {
+          this.showNoContent = false;
+        }
+        this.characters = data.results;
+      })
+      .catch((data) => {
+        this.showNoContent = true;
+        this.loading = false;
+        this.characters = [];
+        console.log('error', data);
+      });
   }
 }
+/*
+Constructor: cuando se corre una instancia
+ngOnChanges : corre antes y durante en el render, siemrpe que detecte cambios en el Input, está para eso, para detectar los cambios.
+ngOnInit: corre antes pero tiene la condicione que solo correo una vez. Ahi se corren eventos asincronos.
+ngAfcterViewInit: corre cuando los hijos de ese componentes se han renderizado.
+NgOnDestroy: Corre cuando se elimina el componente.
+* */

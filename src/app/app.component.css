@@ -9,6 +9,14 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.justify-center{
+  justify-content: center;
+}
+
 .search-input {
   width: 60%;
   height: 80px;
@@ -30,14 +38,20 @@
   border-color: black;
 }
 .mini-card {
+  display: flex;
   background-color: white;
-  height: 100px;
-  width: 300px;
+  height: 80px;
+  width: 200px;
   margin: 10px;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.mini-card img {
+  height: 100%;
+  border-radius: 20px;
+  border-color: black;
+}
 .image-size {
   width: 60%;
 }
@@ -48,7 +62,14 @@
   text-align: center;
 }
 .bg-rickMorty {
-  background-image: url(../assets/img/Rick-and-Morty-Zoom-Backgrounds-Garage-1.webp);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/rick-and-morty-fbf26.appspot.com/o/Rick-and-Morty-Zoom-Backgrounds-Garage-1.webp?alt=media&token=8106b6d5-7635-4265-aa5b-502dffe16488);
+}
+.notFind {
+  font-size:30px;
+  font-weight: bold;
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+  color: white;
+  margin: 30px;
 }
 footer {
   background-color: #69ad53;
