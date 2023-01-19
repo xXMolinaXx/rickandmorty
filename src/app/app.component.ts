@@ -84,6 +84,9 @@ export class AppComponent {
         console.log('error', data);
       });
   }
+  setcharacter(name: string) {
+    this.valueSearch = name;
+  }
 }
 /*
 Constructor: cuando se corre una instancia

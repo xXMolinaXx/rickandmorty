@@ -56,9 +56,9 @@
     <div>
       <h1 style="text-align: center;color: white;-webkit-text-stroke: 2px rgb(0, 0, 0);">sugerencias</h1>
       <section class="flex justify-center">
-        <div class="mini-card" *ngFor="let el of suggestion">
+        <div  class="mini-card" *ngFor="let el of suggestion">
           <img [src]="el.image" alt="">
-          <div style="padding: 20px 5px;">
+          <div (click)="setcharacter(el.name)" title="clickeame">
             <p>{{el.name}}</p>
           </div>
         </div>
@@ -81,7 +81,7 @@
     </div>
     <div>
       <p class="text-center">frontend rick and morty, by KenJ</p>
-      <p class="text-center">proyecto en angular</p>
+      <p class="text-center">proyect on angular </p>
     </div>
   </footer>
 </div>
