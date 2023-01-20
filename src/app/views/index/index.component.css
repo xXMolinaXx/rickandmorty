@@ -1,0 +1,125 @@
+:root {
+  --xs: 480px;
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  --xxl: 1600px;
+}
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.search-input {
+  width: 60%;
+  height: 80px;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: larger;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.card {
+  background-color: white;
+  height: 500px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  border-radius: 20px 20px 0px 0px;
+  border-color: black;
+}
+.mini-card {
+  display: flex;
+  background-color: white;
+  height: 80px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.mini-card:hover {
+  cursor: context-menu
+}
+.mini-card img {
+  height: 100%;
+  border-radius: 20px;
+  border-color: black;
+}
+.mini-card div p {
+  padding: 20px 5px;
+}
+.image-size {
+  width: 60%;
+}
+.p-10 {
+  padding: 10px;
+}
+.text-center {
+  text-align: center;
+}
+.bg-rickMorty {
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/rick-and-morty-fbf26.appspot.com/o/Rick-and-Morty-Zoom-Backgrounds-Garage-1.webp?alt=media&token=8106b6d5-7635-4265-aa5b-502dffe16488);
+}
+.notFind {
+  font-size: 30px;
+  font-weight: bold;
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+  color: white;
+  margin: 30px;
+  padding: 5px;
+  background-color: rgba(35, 35, 35, 0.438);
+}
+footer {
+  background-color: #69ad53;
+  margin: 0px 50px 0px 50px;
+  padding: 10px;
+  border: 5px #c7fa6c solid;
+  border-bottom: 0px;
+}
+@media only screen and (max-width: 480px) {
+  .mini-card {
+    flex-direction: column;
+    width: 80px;
+    height: 130px;
+    background-color: transparent;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0);
+  }
+  .mini-card img {
+    width: 80px;
+    height: 80px;
+  }
+  .mini-card div p {
+    padding: 0px;
+    color: white;
+    background-color: rgba(35, 35, 35, 0.663);
+    text-align: center;
+    cursor: pointer;
+  }
+  .search-input {
+    width: 90%;
+    font-size: x-small;
+  }
+  .image-size{
+    width: 100%;
+  }
+  footer{
+    margin: 0px;
+  }
+}

@@ -8,3 +8,7 @@
 html,body{
   min-height:100vh ;
 }
+.bg-rickMorty {
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/rick-and-morty-fbf26.appspot.com/o/Rick-and-Morty-Zoom-Backgrounds-Garage-1.webp?alt=media&token=8106b6d5-7635-4265-aa5b-502dffe16488);
+  background-size: cover;
+}
