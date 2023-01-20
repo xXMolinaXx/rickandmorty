@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttprequestService } from './services/httprequest.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
   age = 50;
   showPracticeBlock = false;
   names = ['kenny', 'jared', 'molina', 'murillo'];
+  messageSearchCharacter = 'no haz realizado ninguna busqueda';
   characters: any[] = [];
   showClass = true;
   imageSize = 10;
@@ -18,6 +20,7 @@ export class AppComponent {
   suggestion: any[] = [];
   showNoContent = false;
   loading = false;
+  constructor(private httpRequest: HttprequestService) {}
   enable() {
     this.disabled = !this.disabled;
   }
@@ -61,28 +64,18 @@ export class AppComponent {
   }
   search() {
     this.loading = true;
-    fetch(`https://rickandmortyapi.com/api/character/?name=${this.valueSearch}`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Something went wrong');
-      })
-      .then((data) => {
+    this.httpRequest.getCharacters(this.valueSearch).subscribe(
+      (data: any) => {
         this.loading = false;
-        if (data.length === 0) {
-          this.showNoContent = true;
-        } else {
-          this.showNoContent = false;
-        }
+
         this.characters = data.results;
-      })
-      .catch((data) => {
+      },
+      (error) => {
         this.showNoContent = true;
-        this.loading = false;
         this.characters = [];
-        console.log('error', data);
-      });
+        this.messageSearchCharacter = 'no se encontro ningun personaje'
+      }
+    );
   }
   setcharacter(name: string) {
     this.valueSearch = name;

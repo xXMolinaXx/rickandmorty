@@ -54,7 +54,9 @@
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
+.mini-card:hover {
+  cursor: context-menu
+}
 .mini-card img {
   height: 100%;
   border-radius: 20px;
@@ -104,15 +106,11 @@ footer {
     height: 80px;
   }
   .mini-card div p {
-    font-size: 1px;
     padding: 0px;
     color: white;
     background-color: rgba(35, 35, 35, 0.663);
     text-align: center;
     cursor: pointer;
-  }
-  .mini-card div p:hover {
-    cursor: context-menu
   }
   .search-input {
     width: 90%;
