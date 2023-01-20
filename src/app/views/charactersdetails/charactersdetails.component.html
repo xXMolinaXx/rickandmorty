@@ -1,1 +1,22 @@
-<p>charactersdetails works!</p>
+<div style="min-height: 100vh;display: flex;justify-content: center;align-items: center;">
+  <section class="">
+    <div class="big-card" style="display: flex;flex-direction: column;">
+      <img [src]="character.image" alt="">
+      <h1>{{character.name}}</h1>
+      <div style="padding-top: 20px;">
+        <div><span class="circle blink" [ngStyle]="{
+          'background-color': color
+      }"></span>&nbsp;{{character.status}} </div>
+        <p>creation date:{{character.created | date}}</p>
+        <p>gender: {{character.gender}}</p>
+        <a [routerLink]="['/location',origin]" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <p>origin: {{character.origin.name}}</p>
+        </a>
+        <a [routerLink]="['/location',location]" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <p>location: {{character.location.name}}</p>
+        </a>
+        <p>species: {{character.species}}</p>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,3 +1,11 @@
+interface Origin{
+  name:string;
+  url:string;
+}
+interface Location {
+  name:string,
+  url:string
+}
 export interface Characters {
   id: number;
   name: string;
@@ -5,8 +13,8 @@ export interface Characters {
   species: string;
   type: string;
   gender: string;
-  origin: object;
-  location: object;
+  origin:Origin;
+  location: Location;
   image: string;
   episode: Array<string>;
   url: string;

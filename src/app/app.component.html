@@ -1,1 +1,56 @@
+<div *ngIf="showPracticeBlock" style="background-color: white;">
+  <h1>Hola kenny {{title}}</h1>
+  <p>1+1 = {{ 1+1 }}</p>
+  <!-- property binding -->
+  <button [disabled]="disabled">enviar</button>
+  <input type="text" [value]="title" (keyup)="changeName($event)">
+  <p>{{age}}</p>
+  <progress max="100" [value]="age"></progress>
+  <!-- event binding -->
+  <button (click)="enable()">activar otro boton</button>
+  <button (click)="add()">agregar</button>
+  <div class="box" (scroll)="onscroll($event)">
+    <p>{{'kenny jared molina murillo'.repeat(100)}}</p>
+  </div>
+  <!-- ngModel -->
+  <input type="text" #nameInput="ngModel" [(ngModel)]="title" required>
+  <p>{{nameInput.valid}}</p>
+  <!-- debo de importa formModule en el  module-->
+  <!-- ng if -->
+  <p *ngIf="title==='my-app'; else myBlock">es el mismo texto con el titulo </p>
+  <ng-template #myBlock>
+    <p>hola bloque</p>
+  </ng-template>
+  <!-- ngFor -->
+  <ul>
+    <li *ngFor="let value of names; index as i">
+      {{value+" "+i}}
+    </li>
+  </ul>
+  <!-- switch -->
+  <div [ngSwitch]="title">
+    <p *ngSwitchCase="'kenny'">kenny</p>
+    <p *ngSwitchCase="'kenny 1'">kenny1</p>
+  </div>
+  <!-- conditinonal class -->
+  <input type="button" (click)="deleteaddclass()" value="quitar/agregar">
+  <div [class.box]="showClass" (scroll)="onscroll($event)">
+    <p>{{'kenny jared molina murillo'.repeat(100)}}</p>
+  </div>
+  <input type="text" [(ngModel)]="imageSize" name="" id="">
+  <img [style.width.px]="imageSize" class="image-size" src="../assets/img/International_Pokémon_logo.svg.png">
+  <!-- ng class ng style sirve mejor que lo anterior -->
+  <app-img [stringPasadoPorPafre]="title" (valor2)="onloaded($event)"></app-img>
+</div>
 <router-outlet></router-outlet>
+<footer class="">
+  <li><a routerLink="/characterDetail" routerLinkActive="active" ariaCurrentWhenActive="page">First Component</a></li>
+  <button (click)="showPractice()">mostrar/desmostrar</button>
+  <!-- <div>
+    <button (click)="showPractice()">mostrar/ocultar</button>
+  </div> -->
+  <div>
+    <p class="text-center">frontend rick and morty, by KenJ</p>
+    <p class="text-center">proyect on angular </p>
+  </div>
+</footer>

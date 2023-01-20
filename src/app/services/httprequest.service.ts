@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { RickMortyPeticion } from '../commons/interface/characters.interface';
+import { Characters, RickMortyPeticion } from '../commons/interface/characters.interface';
 import { catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -24,6 +24,13 @@ export class HttprequestService {
   getCharacters(valueSearch: string) {
     return this.http.get(
       `https://rickandmortyapi.com/api/character/?name=${valueSearch}`
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+  getOneCharacters(valueSearch: string | null) {
+    return this.http.get<Characters>(
+      `https://rickandmortyapi.com/api/character/${valueSearch}`
     ).pipe(
       catchError(this.handleError)
     );
